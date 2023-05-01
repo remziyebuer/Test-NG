@@ -31,11 +31,18 @@ public class C02_PageKullanimi {
         openSourcePage.password.sendKeys(ConfigReader.getProperty("password"));
         openSourcePage.login.click();
 
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
 
         //Login Testinin basarili oldugunu test et
+        //Login oldugunuzu DashBoard locate ederek dogrulayabilirsiniz.
 
         Assert.assertTrue(openSourcePage.dashboard.isDisplayed());
-
+        Driver.closeDriver();
 
 
     }

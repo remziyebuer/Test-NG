@@ -21,5 +21,6 @@ public class TestCenterTechProPage {
     @FindBy(xpath = "//*[text()=' Logout']")
     public WebElement logout;
 
-
+    @FindBy(xpath = "//*[text()='Login Page']")
+    public WebElement giris;
 }

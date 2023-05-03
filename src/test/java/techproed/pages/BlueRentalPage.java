@@ -13,5 +13,15 @@ public class BlueRentalPage {
     @FindBy(xpath = "//*[@id='formBasicEmail']")
     public WebElement email;
     @FindBy(id = "dropdown-basic-button")
-    public WebElement verify;
+    public WebElement verify;//bu giris yapildiginda cikan kisi isminin oldugu
+    //yerin locate'i
+    //______________________________
+
+//negatif test icin hata mesajinin locateni almaliyiz
+// bu giris yapamadigimizi dogrular
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement hataMesaji;
+    @FindBy(xpath = "//*[@type='submit']")
+    public WebElement login2;
+
 }

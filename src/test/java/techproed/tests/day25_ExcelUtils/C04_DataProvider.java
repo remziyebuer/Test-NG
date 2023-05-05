@@ -24,7 +24,7 @@ public class C04_DataProvider {
     paremetresine yeni olusturduğumuz methodun adını yazarız
      */
 
-    @Test(dataProvider = "urunler")
+    @Test(dataProvider = "urunler")//yasin hoca provider google test olarak degistirmis???
     public void testdataprovider(String data) {//DataP.'daki verileri alabilmek için
         // Test methodumuza String bir parametre ataması yaparız
         System.out.println(data);
@@ -36,7 +36,7 @@ public class C04_DataProvider {
         return new Object[][]{{"Volvo"}, {"Mercedes"}, {"Audi"}, {"Honda"}, {"Toyota"}, {"Opel"}, {"BMW"}};
     }
 
-    @Test(dataProvider = "googleTest")
+    @Test(dataProvider = "googleTest")//isim???????
     public void googleTest(String araclar) {
         //Google sayfasına gidiniz
         //Driver.getDriver().get("https://google.com");

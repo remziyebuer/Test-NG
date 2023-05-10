@@ -26,6 +26,7 @@ import java.util.List;
             }
         }
 
+
         //Satir ve sütun sayilari girildiğinde, o hücredeki veriyi return eder
         public String getCellData(int rowNum, int colNum) {
             Cell cell = sheet.getRow(rowNum).getCell(colNum);

@@ -35,6 +35,9 @@ public class Driver {
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
             }
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -43,9 +46,15 @@ public class Driver {
     }
 
     public static void closeDriver() {
-        if (driver != null) {//if driver is pointing anywhere
-            driver.quit();//quit when I call closeDriver
-            driver = null;//make the driver null so when we call getDriver, we can open the driver again
+        if (driver != null) {//Driver'a değer atanmışşsa
+            driver.close();
+            driver = null;
         }
     }
-}
+        public static void quitDriver () {
+            if (driver != null) {//Driver'a değer atanmışşsa
+                driver.quit();
+                driver = null;
+            }
+        }
+    }

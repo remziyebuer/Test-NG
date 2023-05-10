@@ -16,12 +16,14 @@ public class C03_BlueRentalExcelTest2 {
         BlueRentalCar sayfasına gidip login olalım
          */
         ExcelUtils excelUtils = new ExcelUtils("src/test/java/resources/mysmoketestdata.xlsx","customer_info");
-
         //Sayfaya gidelim
+
         Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
         BlueRentalPage blueRentalPage = new BlueRentalPage();
         //Bir loop oluşturup excel dosyasındaki tüm verileri girdirelim
-        for (int i = 1; i <= excelUtils.rowCount(); i++) {//i'yi 1 den başlattık çünkü veriler 1. satırdan başlıyor
+        System.out.println("excelUtils.rowCount() = " + excelUtils.rowCount());//bu kodu teknik yazdi
+
+        for (int i = 1; i <=excelUtils.rowCount(); i++) {//i'yi 1 den başlattık çünkü veriler 1. satırdan başlıyor
             String mail = excelUtils.getCellData(i,0);
             String password = excelUtils.getCellData(i,1);
             System.out.println(mail+" || "+password);
@@ -35,9 +37,13 @@ public class C03_BlueRentalExcelTest2 {
             blueRentalPage.logout.click();
             ReusableMethods.bekle(3);
             blueRentalPage.ok.click();
+
+// sorun bu sayfada hcm tmm hcm tum locateleri kontrol
+// ettim kac defa zaten null pointer veryr ama siniri degistiryrm yinede null veryr
+//sonuc ; meger excelde görünmeyen space yazilmis 8. satirda kullaniliyor ama görünmüyor.
+//cözüm 5 satirimizi kesip baska sayfaya kopyaladik bos oldugundan emin oldugum yeni bir sayfaya.
+
         }
         Driver.closeDriver();
-
-
     }
 }

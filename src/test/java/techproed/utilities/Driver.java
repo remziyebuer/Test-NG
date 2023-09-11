@@ -7,8 +7,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
-public class Driver {
 
+public class Driver {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -51,10 +51,11 @@ public class Driver {
             driver = null;
         }
     }
-        public static void quitDriver () {
-            if (driver != null) {//Driver'a değer atanmışşsa
-                driver.quit();
-                driver = null;
-            }
+    public static void quitDriver () {
+        if (driver != null) {//Driver'a değer atanmışşsa
+            driver.quit();
+            driver = null;
         }
     }
+
+}
